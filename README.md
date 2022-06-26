@@ -14,7 +14,7 @@ The Levenshtein Distance is a string metric for measuring the difference between
 
 It can be a popular choice for spell checking or full text search.
 
-[![Levenshtein Distance Formula](https://wikimedia.org/api/rest_v1/media/math/render/svg/6224efffbe9a4e01afbddeeb900bfd1b3350b335)]
+![Levenshtein Distance Formula](https://wikimedia.org/api/rest_v1/media/math/render/svg/6224efffbe9a4e01afbddeeb900bfd1b3350b335)
 
 ### Smith-Waterman:
 
