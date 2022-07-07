@@ -1,11 +1,19 @@
 /**
-* Levenshtein Edit Distance
-* Original created by overloard1234 and edited by David, then revised for implementation by confused-Techie
-* https://stackoverflow.com/a/36566052/12707685
-* This will find the shortest value of substitutions, deletions, and insertions required to create the same two strings, returning an index, that can be used to determine which two strings are closer.
+* @function LevenshteinDistance
+* @desc This has been modified and adapted by confused-Techie from the original JavaScript
+* implementation made by overlord1234, which was then edited by David on its original forum.
+* This implementation will find the shortest value of substitutions, deletions, and insertions
+* required to create the same two strings, and return this value back to you.
+* @author confused-Techie <dev@lhbasics.com>
+* @author overlord1234
+* @author David
+* @copyright overlord1234 2016
+* @license MIT
+* @see {@link https://stackoverflow.com/a/36566052/12707685|StackOverflow}
+* @see {@link https://en.wikipedia.org/wiki/Levenshtein_distance|Wikipedia}
 */
 
-function levenshtein(s1, s2) {
+function LevenshteinDistance(s1, s2) {
   let longer = s1;
   let shorter = s2;
   if (s1.length < s2.length) {
@@ -17,12 +25,11 @@ function levenshtein(s1, s2) {
     return 1.0;
   }
   return (
-    (longerLength - vlEditDistance(longer, shorter)) / parseFloat(longerLength)
+    (longerLength - ldEditDistance(longer, shorter)) / parseFloat(longerLength)
   );
 }
 
-// Named vlFUNC after its creator Vladimir Levenshtein
-function vlEditDistance(s1, s2) {
+function lvEditDistance(s1, s2) {
   s1 = s1.toLowerCase();
   s2 = s2.toLowerCase();
 
@@ -49,5 +56,3 @@ function vlEditDistance(s1, s2) {
   }
   return costs[s2.length];
 }
-
-module.exports = { levenshtein };

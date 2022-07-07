@@ -1,14 +1,18 @@
 /**
-* Longest Common Subsequence
-* This will do its best to find the longest common subsequence between two sequences.
-* Completely implemented by @confused-Techie in JavaScript based on the formula.
-*
-* This does take one liberty from the actual equation, and instead of returning the actual longest common subsequence
-* It will instead return a float of similarity between the two. This could be useful for performing searches on multiple strings, to find the best
-* similarity between the two.
+* @function LongestCommonSubsequence
+* @desc This has been directly adapted from the Longest Common Subsequence Algorithm for use in JavaScript.
+* The goal of the Longest Common Subsequence is to determine the longest subsequence
+* common to all sequences in a set of two sequences.
+* This example differs slightly from the original goal, to return a similarity index, between 1.0 and 0.0
+* indicating how close the two sequences are to each other. The location this occurs is clearly
+* documented, to allow easy change later on.
+* @author confused-Techie <dev@lhbasics.com>
+* @copyright confused-Techie 2022
+* @license MIT
+* @see {@link https://en.wikipedia.org/wiki/Longest_common_subsequence_problem|Wikipedia}
 */
 
-function lcs(s1, s2) {
+function LongestCommonSubsequence(s1, s2) {
   let height = s1.length + 1;
   let width = s2.length + 1;
   let matrix = Array(height)
@@ -32,7 +36,7 @@ function lcs(s1, s2) {
   return longest.length / s1.length;
 }
 
-function lcsTraceBack(matrix, s1, s2, height, width) {
+function longestCommonSubsequenceTraceBack(matrix, s1, s2, height, width) {
   if (height === 0 || width === 0) {
     return "";
   }
@@ -47,5 +51,3 @@ function lcsTraceBack(matrix, s1, s2, height, width) {
   }
   return lcsTraceBack(matrix, s1, s2, height - 1, width);
 }
-
-module.exports = { lcs };
