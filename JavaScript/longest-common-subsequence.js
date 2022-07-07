@@ -29,7 +29,7 @@ function LongestCommonSubsequence(s1, s2) {
     }
   }
 
-  let longest = lcsTraceBack(matrix, s1, s2, height, width);
+  let longest = longestCommonSubsequenceTraceBack(matrix, s1, s2, height, width);
   // Now longest is a literal string of the longest common subsequence.
   // This is now where the implementation differs from the alrogithm,
   // We will make a float of how close the longest sequence is to the searched sequence
@@ -42,12 +42,12 @@ function longestCommonSubsequenceTraceBack(matrix, s1, s2, height, width) {
   }
   if (s1[height - 1] == s2[width - 1]) {
     return (
-      lcsTraceBack(matrix, s1, s2, height - 1, width - 1) +
+      longestCommonSubsequenceTraceBack(matrix, s1, s2, height - 1, width - 1) +
       (s1[height - 1] ? s1[height - 1] : "")
     );
   }
   if (matrix[height][width - 1] > matrix[height - 1][width]) {
-    return lcsTraceBack(matrix, s1, s2, height, width - 1);
+    return longestCommonSubsequenceTraceBack(matrix, s1, s2, height, width - 1);
   }
-  return lcsTraceBack(matrix, s1, s2, height - 1, width);
+  return longestCommonSubsequenceTraceBack(matrix, s1, s2, height - 1, width);
 }

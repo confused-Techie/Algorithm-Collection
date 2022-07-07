@@ -29,7 +29,7 @@ function LevenshteinDistance(s1, s2) {
   );
 }
 
-function lvEditDistance(s1, s2) {
+function ldEditDistance(s1, s2) {
   s1 = s1.toLowerCase();
   s2 = s2.toLowerCase();
 
